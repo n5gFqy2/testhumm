@@ -30,12 +30,14 @@ app.use(responseTime());
 //-----------
 
 const { login } = require("./routers/index/login.js");
+const { user } = require("./routers/user/index.js");
 
 const { logResponse } = require("./middleware/response.js");
 const { errorHandler } = require("./middleware/error.js");
 
 // add the routers
 app.use(login);
+app.use(user);
 
 // add the response log midddleware
 app.use(logResponse);
