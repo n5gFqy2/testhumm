@@ -51,10 +51,7 @@ describe('Login Unauthorized', () => {
       });
 
     it('Login Unauthorized', async () => {   
-        try { 
-            await LoginServices.login("user", "pass");
-        } catch(e) {
-            e.status.should.equal(401);
-        }
+        const response = await LoginServices.login("user", "pass");
+        response.status.should.equal(401);
     });
 });
